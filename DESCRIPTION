@@ -1,0 +1,30 @@
+Package: GetEdgarData
+Type: Package
+Title: Imports Financial Statements from the Edgar system (SEC/US)
+Version: 0.1.0
+Author: Marcelo S. Perlin
+Maintainer: Marcelo S. Perlin <marceloperlin@gmail.com>
+Description: Downloads and parses zip files form the DERA systam at EDGAR (<https://www.sec.gov/dera/data>)Imports time series data from the Quandl database <https://www.quandl.com>. 
+   Uses local caching for speeding up queries. 
+Imports: 
+    lubridate,
+    purrr,
+    dplyr,
+    readr,
+    magrittr,
+    rvest,
+    xml2,
+    utils,
+    stringr
+License: GPL-2
+BugReports: https://github.com/msperlin/GetEdgarData/issues
+URL: https://github.com/msperlin/GetEdgarData/
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: knitr,
+    rmarkdown,
+    testthat,
+    ggplot2,
+    tidyverse
+VignetteBuilder: knitr
