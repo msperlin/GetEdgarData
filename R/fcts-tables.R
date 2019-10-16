@@ -105,7 +105,7 @@ parse_num_table <- function(df.in) {
   uom <- value <- qtrs <- coreg <- ref_date <-  NULL
 
   df_num <- df.in %>%
-    select(id.file = adsh,
+    select(id_file = adsh,
            tag,
            version,
            ref_date = ddate,
@@ -195,7 +195,7 @@ parse_final_table <- function(df_num, df_sub, #df.pre,
     select(-country, -state, -city) %>%
     mutate(sic_code = as.numeric(sic_code))
 
-  df_tab <- inner_join(df_sub, df_num, by = 'id.file') %>%
+  df_tab <- inner_join(df_sub, df_num, by = 'id_file') %>%
     filter(lubridate::year(ref_date) == year_in)
 
   if (type_data == 'yearly') {

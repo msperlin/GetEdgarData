@@ -3,7 +3,7 @@
 #' This functino will read the zip files and get information about available companies.
 #'
 #' @param years Years to find data
-#' @param type_form The type of SEC form ('10-k' or '10-Q')
+#' @param type_form The type of SEC form ('10-K' or '10-Q')
 #' @inheritParams get_edgar_fin_data
 #'
 #' @return A dataframe with information about companies
@@ -25,7 +25,13 @@ get_info_companies <- function(years = 2009:2018,
 
   possible_cases <- c('yearly', 'quarterly')
   if (!(type_data %in% possible_cases) ) {
-    stop('Argumento type_data should be one of ',
+    stop('Argument type_data should be one of ',
+         paste0(possible_cases, collapse = ', '))
+  }
+
+  possible_cases <- c('10-K', '10-Q')
+  if (!(type_form %in% possible_cases) ) {
+    stop('Argument type_form should be one of ',
          paste0(possible_cases, collapse = ', '))
   }
 
